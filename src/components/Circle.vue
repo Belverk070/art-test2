@@ -7,7 +7,7 @@
       @mouseout="section.isSelected = false"
       class="circle__sector"
       :class="{
-        ['circle__sector-' + section.color]: section.color,
+        ['circle__sector_' + section.color]: section.color,
         'circle__sector_active': section.isSelected,
       }"
       :style="`clip-path: ${section.polygon}`"
@@ -22,8 +22,8 @@
       class="legend__item"
       :class="{ 'legend__item_active': legend.isSelected }"
     >
-      <div class="square" :class="'square-' + legend.color" />
-      <p class="legend-text" :class="{['underline__color--' + legend.color]: legend.isSelected}">
+      <div class="square" :class="'square_' + legend.color" />
+      <p class="legend__text" :class="{['underline_' + legend.color]: legend.isSelected}">
         {{ legend.description }}
       </p>
     </li>
@@ -77,13 +77,13 @@ export default {
   width: 100%;
   height: 100%;
 }
-.circle__sector-gray {
+.circle__sector_gray {
   background-color: #d9d9d9;
 }
-.circle__sector-pink {
+.circle__sector_pink {
   background-color: #ff69b4;
 }
-.circle__sector-green {
+.circle__sector_green {
   background-color: #97bb31;
 }
 .circle__sector_active {
@@ -101,7 +101,7 @@ export default {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 }
-.legend-text {
+.legend__text {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -113,13 +113,13 @@ export default {
   text-decoration-color: transparent;
   transition: 0.5s;
 }
-.underline__color--pink {
+.underline_pink {
   text-decoration-color: #ff69b4;
 }
-.underline__color--gray {
+.underline_gray {
   text-decoration-color: #d9d9d9;
 }
-.underline__color--green {
+.underline_green {
   text-decoration-color: #97bb31;
 }
 .square {
@@ -127,13 +127,13 @@ export default {
   height: 14px;
   margin-right: 13px;
 }
-.square-pink {
+.square_pink {
   background-color: #ff69b4;
 }
-.square-gray {
+.square_gray {
   background-color: #d9d9d9;
 }
-.square-green {
+.square_green {
   background-color: #97bb31;
 }
 </style>
